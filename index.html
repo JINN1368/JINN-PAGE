@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngọc Rồng Termux</title>
+    <title>Ngrok Auth Setup</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="section">
             <h2>Command Line</h2>
             <p>Authenticate your ngrok agent. You only have to do this once. The Authtoken is saved in the default configuration file.</p>
+            <div class="code-header">&gt;_  Termux</div>
             <div class="code-block">
-                <pre><code>&gt; terminal</code></pre>
                 <pre><code>ngrok config add-authtoken <span class="token">YOUR_AUTHTOKEN</span></code></pre>
-                <div class="button-container">
-                    <button class="show-button">Show Authtoken</button>
-                    <button class="copy-button">Copy</button>
-                </div>
+                <button class="copy-button">Copy</button>
             </div>
         </div>
         <div class="section">
             <h2>Configuration File</h2>
             <p>Alternatively, you can directly add the Authtoken to your <code>ngrok.yml</code> configuration file. Use <code>ngrok config edit</code> to open the file.</p>
+            <div class="code-header">ngrok.yml</div>
             <div class="code-block">
-                <pre><code>ngrok.yml</code></pre>
                 <pre><code>authoken: <span class="token">your-authtoken</span></code></pre>
-                <div class="button-container">
-                    <button class="show-button">Show Authtoken</button>
-                    <button class="copy-button">Copy</button>
-                </div>
+                <button class="copy-button">Copy</button>
             </div>
         </div>
         <div class="section">
@@ -38,6 +33,28 @@
             <button class="reset-button">Reset Authtoken</button>
         </div>
     </div>
-    <script src="scripts.js"></script>
+    <script>
+    // Chờ đến khi tất cả các tài nguyên đã được tải xong
+    document.addEventListener("DOMContentLoaded", function() {
+        // Lấy tất cả các nút "Copy"
+        var copyButtons = document.querySelectorAll(".copy-button");
+
+        // Lặp qua từng nút "Copy" và gán sự kiện click
+        copyButtons.forEach(function(button) {
+            // Tạo một đối tượng Clipboard.js mới và gán nó cho nút "Copy" tương ứng
+            new ClipboardJS(button);
+
+            // Xử lý sự kiện khi nút "Copy" được nhấp
+            button.addEventListener("click", function() {
+                // Thay đổi văn bản của nút "Copy" thành "Copied!" trong một khoảng thời gian ngắn
+                button.textContent = "Copied!";
+                setTimeout(function() {
+                    button.textContent = "Copy";
+                }, 2000); // Sau 2 giây, chuyển trở lại văn bản ban đầu
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
