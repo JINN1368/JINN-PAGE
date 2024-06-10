@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #101010;
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.code-block {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+pre {
+    margin: 0;
+    color: #e0e0e0;
+}
+
+.token {
+    color: #ffcc00;
+}
+
+button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: absolute;
+    top: 15px;
+}
+
+button.show-button {
+    right: 90px;
+}
+
+button.copy-button {
+    right: 15px;
+}
+
+button.reset-button {
+    background-color: #ff4444;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .code-block {
+        padding: 15px 5px 70px 5px; /* Add bottom padding to accommodate buttons */
+    }
+    
+    button {
+        position: static;
+        margin: 10px 5px 0 0;
+    }
+    
+    button.reset-button {
+        width: calc(100% - 10px);
+        margin: 10px 5px;
+    }
+}
