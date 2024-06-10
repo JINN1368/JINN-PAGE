@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #101010;
-    color: #e0e0e1;
+    color: #e0e0e0;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -34,7 +34,20 @@ p {
     margin-bottom: 10px;
 }
 
+.code-header {
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: transparent; /* Không có màu nền */
+}
+
 .code-block {
+    display: flex;
+    align-items: center; /* Dọc các phần tử theo trục chính */
+    justify-content: space-between; /* Cách đều hai phần tử */
     background-color: #2a2a2a;
     padding: 15px;
     border-radius: 5px;
@@ -46,6 +59,7 @@ p {
 pre {
     margin: 0;
     color: #e0e0e0;
+    flex: 1; /* Ô text chiếm toàn bộ không gian còn trống */
 }
 
 .token {
@@ -59,44 +73,9 @@ button {
     padding: 7px 12px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px 0;
-}
-
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-}
-
-button.show-button {
-    order: 1;
+    text-align: center;
 }
 
 button.copy-button {
-    order: 2;
-}
-
-button.reset-button {
-    background-color: #ff4444;
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-}
-
-@media (max-width: 600px) {
-    .button-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    button {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    .code-block {
-        padding: 15px;
-    }
+    margin-left: 10px; /* Để tạo khoảng cách giữa nút và text */
 }
