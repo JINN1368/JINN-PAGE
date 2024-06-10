@@ -10,7 +10,15 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
-
+.footer{
+  display:flex;
+  justify-content: space-around;
+}
+.reset-button{
+  margin: 10px;
+  max-width: 200px;
+  width:100%;
+}
 .container {
     max-width: 800px;
     width: 100%;
@@ -22,16 +30,19 @@ body {
 
 .section {
     margin-bottom: 30px;
+    
 }
 
 h2 {
     color: #fff;
     margin-bottom: 10px;
+    text-align:center;
 }
 
 p {
     color: #bbb;
     margin-bottom: 10px;
+  text-align:center;
 }
 
 .code-header {
@@ -41,25 +52,28 @@ p {
     padding: 10px;
     border: 1px solid #444;
     border-radius: 5px;
-    background-color: transparent; /* Không có màu nền */
+    background-color: transparent; 
 }
 
 .code-block {
     display: flex;
-    align-items: center; /* Dọc các phần tử theo trục chính */
-    justify-content: space-between; /* Cách đều hai phần tử */
+    align-items: center;
     background-color: #2a2a2a;
     padding: 15px;
     border-radius: 5px;
-    position: relative;
     overflow-x: auto;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
 
 pre {
     margin: 0;
     color: #e0e0e0;
-    flex: 1; /* Ô text chiếm toàn bộ không gian còn trống */
+    flex-grow: 1; 
+}
+
+button.copy-button {
+  margin-left: 0px; 
+  width: 100%;
 }
 
 .token {
@@ -75,7 +89,27 @@ button {
     cursor: pointer;
     text-align: center;
 }
-
-button.copy-button {
-    margin-left: 10px; /* Để tạo khoảng cách giữa nút và text */
+button:hover{
+  background:#666;
+  transition: .3s;
 }
+
+::-webkit-scrollbar {
+  height: 8px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444; 
+  border-radius: 4px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666; 
+}
+
+scrollbar-width: thin; 
+scrollbar-color: #444 transparent; 
